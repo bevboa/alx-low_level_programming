@@ -1,46 +1,34 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
-
 /**
- * main - Entry point
- * Return: Always 0 (Success)
+ * main - two uer combinations
+ * Return: 0
  */
-
 int main(void)
-
 {
-	int i;
-	int j;
+	int i, j, k;
 
-	i = 48;
-	j = 48;
-	while  ((i < 58) && (j < 58))
+	i = 0;
+
+	while (i < 100)
 	{
-		putchar(i);
-		putchar(j);
-		if ((i == 57) && (j == 57))
+		j = i % 10;
+		k = i / 10;
+
+		if (k < j)
 		{
-			putchar('\n');
-			i++;
-			j++;
-		}
-		else
-		{
-			putchar(44);
-			putchar(32);
-			if (j < 57)
+			putchar(k + '0');
+			putchar(j + '0');
+
+			if (i < 89)
 			{
-				j++;
-			}
-			else
-			{
-				j = 48;
-				i++;
+				putchar(44);
+				putchar(32);
 			}
 		}
 
+		i++;
 	}
+	putchar('\n');
 
 	return (0);
 }
